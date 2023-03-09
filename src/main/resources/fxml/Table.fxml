@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.GridPane?>
+
+<TableView fx:id="table" prefHeight="298.0" GridPane.columnIndex="4" GridPane.columnSpan="7" GridPane.rowIndex="12" GridPane.rowSpan="12" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mortgagecalculator.controllers.TableController">
+    <columns>
+        <TableColumn fx:id="monthColumn" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="%month" />
+        <TableColumn fx:id="paymentColumn" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="%payment" />
+        <TableColumn fx:id="interestColumn" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="%interest" />
+        <TableColumn fx:id="redeemedColumn" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="%redeemed" />
+        <TableColumn fx:id="amountColumn" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="%amountLeft" />
+    </columns>
+    <GridPane.margin>
+        <Insets />
+    </GridPane.margin>
+</TableView>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.GridPane?>
+
+<LineChart GridPane.columnIndex="5" GridPane.columnSpan="6" GridPane.rowIndex="2" GridPane.rowSpan="10"
+           xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="mortgagecalculator.controllers.GraphController" fx:id="lineChart">
+    <xAxis>
+        <NumberAxis label="%month" side="BOTTOM"/>
+    </xAxis>
+    <yAxis>
+        <NumberAxis label="%currency" side="LEFT"/>
+    </yAxis>
+</LineChart>
