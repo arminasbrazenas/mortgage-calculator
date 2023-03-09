@@ -35,14 +35,14 @@ public class MortgageExporter {
         percentageStyle.setDataFormat(workbook.createDataFormat().getFormat("0.00%"));
 
         AtomicInteger rowIndex = new AtomicInteger(0);
-        addMainDataRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("mortgage"), null);
-        addMainDataRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("amount"), mortgage.getAmount(), currencyStyle);
-        addMainDataRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("termInYears"), mortgage.getTermInYears(), null);
-        addMainDataRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("interestRate"), mortgage.getInterestRate(), percentageStyle);
-        addMainDataRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("returnGraph"), Localization.getMessage(mortgage instanceof AnnuityMortgage ? "annuity" : "linear"), null);
-        addMainDataRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("deferralInMonths"), mortgage.getDeferralInMonths(), null);
-        addMainDataRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("deferralInterestRate"), mortgage.getDeferralInterestRate(), null);
-        addMainDataRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("deferralStartMonth"), mortgage.getDeferralStartMonth(), null);
+        addMainRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("mortgage"), null);
+        addMainRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("amount"), mortgage.getAmount(), currencyStyle);
+        addMainRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("termInYears"), mortgage.getTermInYears(), null);
+        addMainRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("interestRate"), mortgage.getInterestRate(), percentageStyle);
+        addMainRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("returnGraph"), Localization.getMessage(mortgage instanceof AnnuityMortgage ? "annuity" : "linear"), null);
+        addMainRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("deferralInMonths"), mortgage.getDeferralInMonths(), null);
+        addMainRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("deferralInterestRate"), mortgage.getDeferralInterestRate(), null);
+        addMainRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("deferralStartMonth"), mortgage.getDeferralStartMonth(), null);
         rowIndex.getAndIncrement();
         addTableToSpreadsheet(spreadsheet, table, rowIndex, currencyStyle);
 
@@ -60,22 +60,22 @@ public class MortgageExporter {
         return fileChooser.showSaveDialog(stage);
     }
 
-    private static void addMainDataRowToSpreadsheet(Sheet spreadsheet, AtomicInteger rowIndex, String title, int value, CellStyle cellStyle) {
-        Row row = addMainDataRowToSpreadsheet(spreadsheet, rowIndex, title, cellStyle);
+    private static void addMainRowToSpreadsheet(Sheet spreadsheet, AtomicInteger rowIndex, String title, int value, CellStyle cellStyle) {
+        Row row = addMainRowToSpreadsheet(spreadsheet, rowIndex, title, cellStyle);
         row.getCell(1).setCellValue(value);
     }
 
-    private static void addMainDataRowToSpreadsheet(Sheet spreadsheet, AtomicInteger rowIndex, String title, double value, CellStyle cellStyle) {
-        Row row = addMainDataRowToSpreadsheet(spreadsheet, rowIndex, title, cellStyle);
+    private static void addMainRowToSpreadsheet(Sheet spreadsheet, AtomicInteger rowIndex, String title, double value, CellStyle cellStyle) {
+        Row row = addMainRowToSpreadsheet(spreadsheet, rowIndex, title, cellStyle);
         row.getCell(1).setCellValue(value);
     }
 
-    private static void addMainDataRowToSpreadsheet(Sheet spreadsheet, AtomicInteger rowIndex, String title, String value, CellStyle cellStyle) {
-        Row row = addMainDataRowToSpreadsheet(spreadsheet, rowIndex, title, cellStyle);
+    private static void addMainRowToSpreadsheet(Sheet spreadsheet, AtomicInteger rowIndex, String title, String value, CellStyle cellStyle) {
+        Row row = addMainRowToSpreadsheet(spreadsheet, rowIndex, title, cellStyle);
         row.getCell(1).setCellValue(value);
     }
 
-    private static Row addMainDataRowToSpreadsheet(Sheet spreadsheet, AtomicInteger rowIndex, String title, CellStyle cellStyle) {
+    private static Row addMainRowToSpreadsheet(Sheet spreadsheet, AtomicInteger rowIndex, String title, CellStyle cellStyle) {
         Row amountRow = spreadsheet.createRow(rowIndex.getAndIncrement());
         amountRow.createCell(0).setCellValue(title);
         amountRow.createCell(1);
