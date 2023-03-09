@@ -41,7 +41,7 @@ public class MortgageExporter {
         addMainRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("interestRate"), mortgage.getInterestRate(), percentageStyle);
         addMainRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("returnGraph"), Localization.getMessage(mortgage instanceof AnnuityMortgage ? "annuity" : "linear"), null);
         addMainRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("deferralInMonths"), mortgage.getDeferralInMonths(), null);
-        addMainRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("deferralInterestRate"), mortgage.getDeferralInterestRate(), null);
+        addMainRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("deferralInterestRate"), mortgage.getDeferralInterestRate(), percentageStyle);
         addMainRowToSpreadsheet(spreadsheet, rowIndex, Localization.getMessage("deferralStartMonth"), mortgage.getDeferralStartMonth(), null);
         rowIndex.getAndIncrement();
         addTableToSpreadsheet(spreadsheet, table, rowIndex, currencyStyle);
