@@ -11,7 +11,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class EntryPoint extends Application {
-
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/MainView.fxml"), Localization.getBundle("lt"));

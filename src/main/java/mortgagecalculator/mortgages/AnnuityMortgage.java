@@ -8,9 +8,9 @@ public class AnnuityMortgage extends Mortgage {
     }
 
     @Override
-    public FilteredList<MortgageRecord> calculate() {
+    public void calculate() {
         if (this.getRecords().size() > 0) {
-            return this.getFilteredRecords();
+            return;
         }
 
         final double annuity = this.getCoefficient() * this.getAmount();
@@ -24,8 +24,6 @@ public class AnnuityMortgage extends Mortgage {
 
             amountLeft -= redeemed;
         }
-
-        return this.getFilteredRecords();
     }
 
     private double getCoefficient() {

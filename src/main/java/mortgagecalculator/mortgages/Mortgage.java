@@ -48,9 +48,9 @@ public abstract class Mortgage {
     public FilteredList<MortgageRecord> getFilteredRecords() { return this.filteredRecords; }
     public ObservableList<MortgageRecord> getRecords() { return this.records; }
 
-    public abstract FilteredList<MortgageRecord> calculate();
+    public abstract void calculate();
 
-    public FilteredList<MortgageRecord> defer(int deferralInMonths, int deferralStartMonth, double deferralInterestRate) {
+    public void defer(int deferralInMonths, int deferralStartMonth, double deferralInterestRate) {
         this.removeDeferredRecords();
 
         this.deferralInMonths = deferralInMonths;
@@ -67,7 +67,6 @@ public abstract class Mortgage {
         }
 
         this.reassignMonths();
-        return this.filteredRecords;
     }
 
     public void filter(int monthStart, int monthEnd) {

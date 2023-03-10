@@ -8,9 +8,9 @@ public class LinearMortgage extends Mortgage {
     }
 
     @Override
-    public FilteredList<MortgageRecord> calculate() {
+    public void calculate() {
         if (this.getRecords().size() > 0) {
-            return this.getFilteredRecords();
+            return;
         }
 
         final double redeemed = this.getAmount() / this.getTermInMonths();
@@ -24,7 +24,5 @@ public class LinearMortgage extends Mortgage {
 
             amountLeft -= redeemed;
         }
-
-        return this.getFilteredRecords();
     }
 }
