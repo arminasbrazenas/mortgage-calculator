@@ -8,8 +8,8 @@ A mortgage calculator created with JavaFX library. It was written during the 2nd
 - Data exportation to a spreadsheet.
 
 ## Examples
-**Main screen**
 ![Main screen](./examples/main-screen.png)
+*Main screen*
 
-**Spreadsheet**
 ![Spreadsheet](./examples/spreadsheet.png)
+*Spreadsheet*
