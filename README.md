@@ -9,7 +9,7 @@ A mortgage calculator using JavaFX library. It was written during the 2nd semest
 
 ## Examples
 **Main screen**
-![Main](examples\main-screen.png)
+![Main screen](./examples/main-screen.png)
 
 **Spreadsheet**
-![Main](examples\spreadsheet.png)
+![Spreadsheet](./examples/spreadsheet.png)
